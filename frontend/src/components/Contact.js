@@ -12,24 +12,88 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
-    serviceType: '',
-    documentType: '',
-    preferredDate: '',
+    service_type: '',
+    document_type: '',
+    preferred_date: '',
     message: ''
   });
+
+  const [businessHours, setBusinessHours] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  useEffect(() => {
+    // Load business hours on component mount
+    const loadBusinessHours = async () => {
+      const result = await apiService.getBusinessHours();
+      if (result.success) {
+        setBusinessHours(result.data);
+      }
+    };
+    loadBusinessHours();
+  }, []);
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
+    // Clear submit status when user starts typing again
+    if (submitStatus) {
+      setSubmitStatus(null);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Mock submission - show success message
-    alert('Thank you! Your request has been received. We will contact you within 1 hour.');
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Convert form data to match API expectations
+      const apiData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service_type: formData.service_type,
+        document_type: formData.document_type || undefined,
+        preferred_date: formData.preferred_date || undefined,
+        message: formData.message || undefined,
+        urgency: 'normal'
+      };
+
+      const result = await apiService.submitContactForm(apiData);
+      
+      if (result.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: result.data.message,
+          reference: result.data.reference
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service_type: '',
+          document_type: '',
+          preferred_date: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: result.error
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to submit form. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
