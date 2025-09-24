@@ -214,8 +214,8 @@ const Contact = () => {
                       <label className="body-small font-semibold mb-2 block">Preferred Date</label>
                       <Input
                         type="date"
-                        value={formData.preferredDate}
-                        onChange={(e) => handleInputChange('preferredDate', e.target.value)}
+                        value={formData.preferred_date}
+                        onChange={(e) => handleInputChange('preferred_date', e.target.value)}
                       />
                     </div>
                   </div>
