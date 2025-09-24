@@ -222,9 +222,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Contact Form API"
+    - "Frontend Landing Page"
     - "Contact Form Integration"
-    - "Business Data APIs"
+    - "API Integration Layer"
+    - "Responsive Design"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
