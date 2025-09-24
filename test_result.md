@@ -233,13 +233,9 @@ metadata:
   run_ui: false
 
 test_plan:
-  current_focus:
-    - "Frontend Landing Page"
-    - "Contact Form Integration"
-    - "API Integration Layer"
-    - "Responsive Design"
+  current_focus: []
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
