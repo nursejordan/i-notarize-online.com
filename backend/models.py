@@ -8,11 +8,11 @@ class ContactSubmissionCreate(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
     phone: str = Field(..., min_length=10, max_length=20)
-    service_type: str = Field(..., regex="^(remote|mobile|bulk)$")
+    service_type: str = Field(..., pattern="^(remote|mobile|bulk)$")
     document_type: Optional[str] = Field(None, max_length=100)
     preferred_date: Optional[str] = None
     message: Optional[str] = Field(None, max_length=1000)
-    urgency: str = Field(default="normal", regex="^(normal|rush)$")
+    urgency: str = Field(default="normal", pattern="^(normal|rush)$")
 
 class ContactSubmission(ContactSubmissionCreate):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
