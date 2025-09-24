@@ -195,18 +195,18 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="body-small font-semibold mb-2 block">Document Type</label>
-                      <Select onValueChange={(value) => handleInputChange('documentType', value)}>
+                      <Select onValueChange={(value) => handleInputChange('document_type', value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select document type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="real-estate">Real Estate Documents</SelectItem>
-                          <SelectItem value="power-attorney">Power of Attorney</SelectItem>
-                          <SelectItem value="will-trust">Will & Trust</SelectItem>
-                          <SelectItem value="loan">Loan Documents</SelectItem>
-                          <SelectItem value="affidavit">Affidavit</SelectItem>
-                          <SelectItem value="contract">Contract/Agreement</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="Real Estate Documents">Real Estate Documents</SelectItem>
+                          <SelectItem value="Power of Attorney">Power of Attorney</SelectItem>
+                          <SelectItem value="Wills & Trusts">Will & Trust</SelectItem>
+                          <SelectItem value="Loan Documents">Loan Documents</SelectItem>
+                          <SelectItem value="Affidavits">Affidavit</SelectItem>
+                          <SelectItem value="Contracts & Agreements">Contract/Agreement</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
