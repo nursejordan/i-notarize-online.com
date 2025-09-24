@@ -232,8 +232,42 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="btn-primary w-full" size="lg">
-                    Send Request
+                  {/* Submit Status Message */}
+                  {submitStatus && (
+                    <div 
+                      className={`p-4 rounded-lg ${
+                        submitStatus.type === 'success' 
+                          ? 'bg-green-50 border border-green-200' 
+                          : 'bg-red-50 border border-red-200'
+                      }`}
+                    >
+                      <p className={`body-small ${
+                        submitStatus.type === 'success' ? 'text-green-800' : 'text-red-800'
+                      }`}>
+                        {submitStatus.message}
+                      </p>
+                      {submitStatus.reference && (
+                        <p className="caption text-green-600 mt-1">
+                          Reference: {submitStatus.reference}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  <Button 
+                    type="submit" 
+                    className="btn-primary w-full" 
+                    size="lg"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={16} className="mr-2 animate-spin" />
+                        Sending Request...
+                      </>
+                    ) : (
+                      'Send Request'
+                    )}
                   </Button>
 
                   <p className="caption text-center" style={{ color: 'var(--text-muted)' }}>
