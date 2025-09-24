@@ -179,7 +179,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className="body-small font-semibold mb-2 block">Service Type *</label>
-                      <Select onValueChange={(value) => handleInputChange('serviceType', value)}>
+                      <Select onValueChange={(value) => handleInputChange('service_type', value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select service type" />
                         </SelectTrigger>
