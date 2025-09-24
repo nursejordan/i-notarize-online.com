@@ -316,19 +316,19 @@ const Contact = () => {
                 <div className="space-y-2 body-small">
                   <div className="flex justify-between">
                     <span>Remote Service:</span>
-                    <span className="font-semibold">24/7</span>
+                    <span className="font-semibold">{businessHours?.remote || '24/7'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Mobile Service:</span>
-                    <span>8 AM - 8 PM</span>
+                    <span>{businessHours?.mobile || '8 AM - 8 PM'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Phone Support:</span>
-                    <span>7 AM - 10 PM</span>
+                    <span>{businessHours?.phone_support || '7 AM - 10 PM'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Weekend:</span>
-                    <span>Available</span>
+                    <span>{businessHours?.weekend || 'Available'}</span>
                   </div>
                 </div>
               </CardContent>
