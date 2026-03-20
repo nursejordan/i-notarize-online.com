@@ -25,16 +25,19 @@ const Hero = () => {
 
         {/* Main Headline */}
         <h1 className="hero-title heading-hero">
-          Fast, Secure Remote Notary Services
+          Fast, Secure & Legally Binding
           <br />
-          <span style={{ color: 'var(--text-secondary)' }}>Starting at $25</span>
+          <span style={{ color: 'var(--text-secondary)' }}>Remote Notary Services</span>
+          <br />
+          <span style={{ color: '#3B82F6', fontSize: '0.6em', fontWeight: '600' }}>Starting at Just $25</span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Enhanced Subtitle */}
         <p className="hero-subtitle body-large" style={{ color: 'var(--text-secondary)' }}>
-          Get your documents notarized from anywhere in the world. 
-          Professional remote notarization services by Yordanos Mathewos, 
-          serving greater New York area and worldwide clients.
+          Get your documents notarized from anywhere in the world in just 15 minutes. 
+          <br />
+          <strong>Professional, convenient, and available 24/7</strong> — serving the greater New York area 
+          and clients worldwide with trusted, state-licensed notarization services.
         </p>
 
         {/* Key Benefits */}
