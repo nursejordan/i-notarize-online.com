@@ -552,6 +552,15 @@ class BackendTester:
         await self.test_contact_form_edge_cases()
         await self.test_contact_submissions_retrieval()
         
+        # Email subscription tests (new feature)
+        print("📧 EMAIL SUBSCRIPTION API TESTS")
+        print("-" * 30)
+        await self.test_email_subscription_valid()
+        await self.test_email_subscription_duplicate()
+        await self.test_email_subscription_invalid_format()
+        await self.test_email_subscription_missing_email()
+        await self.test_email_subscription_different_sources()
+        
         # Business data APIs
         print("🏢 BUSINESS DATA API TESTS")
         print("-" * 30)
