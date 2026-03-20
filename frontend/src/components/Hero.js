@@ -16,7 +16,9 @@ const Hero = () => {
         <h1 className="hero-title heading-hero">
           Fast, Secure Remote Notary Services
           <br />
-          <span style={{ color: 'var(--text-secondary)' }}>Starting at $25</span>
+          <span style={{ color: 'var(--text-secondary)' }}>by Yordanos Mathewos</span>
+          <br />
+          <span style={{ color: 'var(--text-secondary)', fontSize: '0.7em' }}>Starting at $25</span>
         </h1>
 
         {/* Subtitle */}
