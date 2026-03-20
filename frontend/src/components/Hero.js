@@ -7,18 +7,40 @@ const Hero = () => {
     <section className="hero-section" id="hero">
       <div className="hero-content">
         {/* Announcement Badge */}
-        <div className="hero-announcement" style={{ background: 'rgba(59, 130, 246, 0.15)', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
-          <div className="text-center">
-            <div className="heading-3 mb-1" style={{ color: '#3B82F6', fontWeight: '700' }}>
+        <div className="hero-announcement" style={{ 
+          background: 'rgba(59, 130, 246, 0.12)', 
+          border: '1px solid rgba(59, 130, 246, 0.25)',
+          padding: '1.5rem 2rem',
+          borderRadius: '1rem'
+        }}>
+          <div className="text-center space-y-3">
+            <div className="heading-2" style={{ 
+              color: '#1E40AF', 
+              fontWeight: '700',
+              letterSpacing: '0.025em',
+              marginBottom: '0.75rem'
+            }}>
               YORDANOS MATHEWOS
             </div>
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Shield size={14} style={{ color: '#3B82F6' }} />
-              <span className="font-semibold" style={{ color: '#3B82F6' }}>NY STATE LICENSED NOTARY</span>
+            
+            <div className="flex items-center justify-center gap-2" style={{ marginBottom: '0.5rem' }}>
+              <Shield size={16} style={{ color: '#3B82F6' }} />
+              <span className="body-medium font-semibold" style={{ 
+                color: '#3B82F6',
+                letterSpacing: '0.05em'
+              }}>
+                NY STATE LICENSED NOTARY
+              </span>
             </div>
+            
             <div className="flex items-center justify-center gap-2">
-              <Phone size={14} style={{ color: '#3B82F6' }} />
-              <span className="font-medium" style={{ color: '#3B82F6' }}>(929) 866-0037</span>
+              <Phone size={16} style={{ color: '#1E40AF' }} />
+              <span className="heading-3 font-bold" style={{ 
+                color: '#1E40AF',
+                letterSpacing: '0.025em'
+              }}>
+                (929) 866-0037
+              </span>
             </div>
           </div>
         </div>
