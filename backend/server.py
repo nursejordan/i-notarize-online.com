@@ -135,6 +135,29 @@ async def get_coverage_areas():
         raise HTTPException(status_code=500, detail="Failed to get coverage areas")
 
 # Testimonials endpoints
+@api_router.post("/email/subscribe")
+async def subscribe_email(email: EmailStr, source: str = "website"):
+    """Subscribe email for updates"""
+    try:
+        # Check if email already exists
+        existing = await email_subscriptions.find_one({"email": email, "active": True})
+        if existing:
+            return {"success": True, "message": "Email already subscribed", "already_subscribed": True}
+        
+        # Create new subscription
+        subscription = EmailSubscription(email=email, source=source)
+        await email_subscriptions.insert_one(subscription.dict())
+        
+        return {
+            "success": True, 
+            "message": "Successfully subscribed to updates!",
+            "already_subscribed": False
+        }
+        
+    except Exception as e:
+        logging.error(f"Error subscribing email: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to subscribe email")
+
 @api_router.get("/testimonials", response_model=List[Testimonial])
 async def get_testimonials(limit: int = 10):
     try:
