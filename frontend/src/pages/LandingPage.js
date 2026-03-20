@@ -21,6 +21,7 @@ const LandingPage = () => {
         <Pricing />
         <TrustIndicators />
         <Coverage />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
