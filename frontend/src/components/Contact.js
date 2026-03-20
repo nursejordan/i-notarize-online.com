@@ -100,9 +100,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "(555) 123-4567",
+      value: "(929) 866-0037",
       description: "Call for immediate assistance",
-      action: "tel:5551234567"
+      action: "tel:9298660037"
     },
     {
       icon: Mail,
