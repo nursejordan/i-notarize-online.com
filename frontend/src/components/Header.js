@@ -45,7 +45,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
               <Phone size={16} />
-              <span className="mono-text">(555) 123-4567</span>
+              <span className="mono-text">(929) 866-0037</span>
             </div>
             <Button className="btn-primary">
               Book Now
