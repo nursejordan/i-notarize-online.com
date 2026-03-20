@@ -63,7 +63,7 @@ async def init_database():
             "business_name": "i-Notarize-Online",
             "notary_name": "Yordanos Mathewos",
             "license": "NY-2024-001234", 
-            "phone": "(555) 123-4567",
+            "phone": "(929) 866-0037",
             "email": "yordanos@i-notarize-online.com",
             "service_area": "Greater New York Area & Worldwide"
         }
