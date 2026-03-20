@@ -6,6 +6,7 @@ import HowItWorks from '../components/HowItWorks';
 import Pricing from '../components/Pricing';
 import TrustIndicators from '../components/TrustIndicators';
 import Coverage from '../components/Coverage';
+import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
