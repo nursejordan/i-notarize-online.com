@@ -81,7 +81,7 @@ const Hero = () => {
         {/* Enhanced CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
           <Button className="btn-primary" size="lg" style={{ background: '#3B82F6', minHeight: '3.5rem', fontSize: '1.1rem' }}>
-            🚀 Book Remote Notarization - $25
+            BOOK REMOTE NOTARIZATION
           </Button>
           <Button className="btn-secondary" size="lg" style={{ minHeight: '3.5rem', fontSize: '1.1rem' }}>
             📍 Request Mobile Service
