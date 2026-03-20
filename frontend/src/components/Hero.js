@@ -41,29 +41,36 @@ const Hero = () => {
         </p>
 
         {/* Key Benefits */}
-        <div className="flex flex-wrap justify-center gap-6 mb-8">
-          <div className="flex items-center gap-2">
-            <Clock size={18} style={{ color: 'var(--text-primary)' }} />
-            <span className="body-medium">Available 24/7</span>
+        <div className="flex flex-wrap justify-center gap-8 mb-8">
+          <div className="flex items-center gap-3 bg-white bg-opacity-80 px-4 py-2 rounded-full">
+            <Clock size={20} style={{ color: '#3B82F6' }} />
+            <span className="body-medium font-semibold">Ready in 15 Minutes</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Globe size={18} style={{ color: 'var(--text-primary)' }} />
-            <span className="body-medium">Worldwide Service</span>
+          <div className="flex items-center gap-3 bg-white bg-opacity-80 px-4 py-2 rounded-full">
+            <Globe size={20} style={{ color: '#3B82F6' }} />
+            <span className="body-medium font-semibold">Available 24/7 Worldwide</span>
           </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle size={18} style={{ color: 'var(--text-primary)' }} />
-            <span className="body-medium">Legally Binding</span>
+          <div className="flex items-center gap-3 bg-white bg-opacity-80 px-4 py-2 rounded-full">
+            <CheckCircle size={20} style={{ color: '#3B82F6' }} />
+            <span className="body-medium font-semibold">100% Legally Binding</span>
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="btn-primary" size="lg">
-            Book Remote Notarization - $25
+        {/* Enhanced CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+          <Button className="btn-primary" size="lg" style={{ background: '#3B82F6', minHeight: '3.5rem', fontSize: '1.1rem' }}>
+            🚀 Book Remote Notarization - $25
           </Button>
-          <Button className="btn-secondary" size="lg">
-            Request Mobile Service
+          <Button className="btn-secondary" size="lg" style={{ minHeight: '3.5rem', fontSize: '1.1rem' }}>
+            📍 Request Mobile Service
           </Button>
+        </div>
+
+        {/* Urgency/Trust Statement */}
+        <div className="text-center mb-8">
+          <p className="body-small" style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
+            ⚡ <strong>Urgent documents?</strong> Same-day service available • No hidden fees • Satisfaction guaranteed
+          </p>
         </div>
 
         {/* Trust Indicators */}
