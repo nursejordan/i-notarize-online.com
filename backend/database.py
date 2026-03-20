@@ -14,6 +14,7 @@ services = db.services
 business_configs = db.business_configs
 testimonials = db.testimonials
 additional_services = db.additional_services
+email_subscriptions = db.email_subscriptions
 
 async def init_database():
     """Initialize database with seed data"""
