@@ -169,7 +169,7 @@ const Footer = () => {
           <div className="mt-4 text-center">
             <p className="caption" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
               <strong>Emergency Service Available 24/7</strong> • 
-              Call <a href="tel:5551234567" className="hover:text-white">(555) 123-4567</a> for urgent notarizations
+              Call <a href="tel:9298660037" className="hover:text-white">(929) 866-0037</a> for urgent notarizations
             </p>
           </div>
         </div>
