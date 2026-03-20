@@ -24,13 +24,6 @@ const TrustIndicators = () => {
     }
   ];
 
-  const stats = [
-    { number: "500+", label: "Documents Notarized", icon: FileCheck },
-    { number: "4.9", label: "Average Rating", icon: Star },
-    { number: "15min", label: "Average Session Time", icon: Clock },
-    { number: "24/7", label: "Service Availability", icon: Shield }
-  ];
-
   const testimonials = [
     {
       name: "Sarah Johnson",
