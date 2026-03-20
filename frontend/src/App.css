@@ -1,46 +1,55 @@
-/* Voice AI Notary Service Design System */
+/* Voice AI Notary Service Design System - Blue Theme */
 :root {
-  /* Foundation Colors */
-  --bg-page: #FFF9F2;
-  --bg-card: #FFFFFF;
-  --bg-section: rgba(255, 244, 232, 0.6);
-  --bg-overlay: rgba(255, 255, 255, 0.95);
+  /* Foundation Colors - Blue Theme */
+  --bg-page: #F8FAFC;                    /* Light blue-gray page background */
+  --bg-card: #FFFFFF;                    /* All card backgrounds */
+  --bg-section: rgba(239, 246, 255, 0.6); /* Subtle blue section backgrounds */
+  --bg-overlay: rgba(255, 255, 255, 0.95); /* Header overlay with blur */
   
   /* Text Colors */
-  --text-primary: #232323;
-  --text-secondary: #353535;
-  --text-muted: #353535;
+  --text-primary: #1E293B;               /* Main headings and content */
+  --text-secondary: #475569;             /* Supporting text */
+  --text-muted: #64748B;                 /* Captions, meta text */
   
   /* Borders */
-  --border-primary: #999999;
-  --border-input: #999999;
-  --border-input-focus: #4D4D4D;
-  --border-light: rgba(153, 153, 153, 0.3);
+  --border-primary: #CBD5E1;             /* Standard borders */
+  --border-input: #CBD5E1;               /* Form input borders */
+  --border-input-focus: #3B82F6;         /* Focused input borders */
+  --border-light: rgba(203, 213, 225, 0.3); /* Subtle dividers */
 
-  /* Accent Colors for Trust Elements */
-  --accent-blue-400: #768597;
-  --accent-blue-200: #E4EDF8;
-  --accent-green-200: #b8d1ba;
-  --accent-grey-200: #E9E1E1;
+  /* Blue Theme Accent Colors */
+  --accent-blue-600: #2563EB;     /* Strong blue for highlights */
+  --accent-blue-500: #3B82F6;     /* Medium blue */
+  --accent-blue-400: #60A5FA;     /* Light blue for highlights */
+  --accent-blue-200: #DBEAFE;     /* Light blue card backgrounds */
+  --accent-blue-100: #EFF6FF;     /* Very light blue backgrounds */
+  
+  --accent-slate-400: #94A3B8;    /* Complementary gray-blue */
+  --accent-slate-200: #E2E8F0;    /* Light gray-blue backgrounds */
+  
+  --accent-indigo-200: #C7D2FE;   /* Light indigo card backgrounds */
+  --accent-cyan-200: #A5F3FC;     /* Light cyan card backgrounds */
+  
+  --accent-grey-200: #F1F5F9;      /* Light neutral backgrounds */
 
-  /* Glass Effects */
-  --glass-bg: rgba(255, 255, 255, 0.2);
-  --glass-border: rgba(0, 0, 0, 0.1);
+  /* Glass Effect Colors */
+  --glass-bg: rgba(59, 130, 246, 0.1);      /* Blue glass morphism background */
+  --glass-border: rgba(59, 130, 246, 0.2);   /* Blue glass morphism border */
 
-  /* Hero Gradients */
+  /* Hero Gradients - Blue Theme */
   --gradient-hero-warm: linear-gradient(
     135deg,
-    rgba(252, 202, 199, 1) 0%,
-    rgba(253, 215, 197, 0.8) 25%,
-    rgba(254, 241, 229, 0.6) 50%,
-    rgba(255, 250, 243, 0.8) 75%,
-    rgba(252, 202, 199, 1) 100%
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(147, 197, 253, 0.6) 25%,
+    rgba(219, 234, 254, 0.4) 50%,
+    rgba(248, 250, 252, 0.8) 75%,
+    rgba(59, 130, 246, 0.8) 100%
   );
   
   --gradient-hero-subtle: linear-gradient(180deg,
-    rgba(252, 202, 199, 0.95) 0%,
-    rgba(253, 215, 197, 0.8) 40%,
-    rgba(252, 202, 199, 1) 100%);
+    rgba(59, 130, 246, 0.7) 0%,
+    rgba(147, 197, 253, 0.5) 40%,
+    rgba(59, 130, 246, 0.8) 100%);
 }
 
 /* Reset */
