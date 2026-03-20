@@ -39,17 +39,31 @@
   /* Hero Gradients - Blue Theme */
   --gradient-hero-warm: linear-gradient(
     135deg,
-    rgba(59, 130, 246, 0.8) 0%,
-    rgba(147, 197, 253, 0.6) 25%,
-    rgba(219, 234, 254, 0.4) 50%,
-    rgba(248, 250, 252, 0.8) 75%,
-    rgba(59, 130, 246, 0.8) 100%
+    rgba(59, 130, 246, 0.15) 0%,      /* Light blue start */
+    rgba(96, 165, 250, 0.12) 25%,     /* Medium light blue */
+    rgba(219, 234, 254, 0.08) 50%,    /* Very light blue middle */
+    rgba(239, 246, 255, 0.1) 75%,     /* Almost white blue */
+    rgba(248, 250, 252, 1) 100%       /* Light gray-blue end */
   );
   
   --gradient-hero-subtle: linear-gradient(180deg,
-    rgba(59, 130, 246, 0.7) 0%,
-    rgba(147, 197, 253, 0.5) 40%,
-    rgba(59, 130, 246, 0.8) 100%);
+    rgba(59, 130, 246, 0.08) 0%,      /* Soft blue top */
+    rgba(96, 165, 250, 0.05) 40%,     /* Lighter blue middle */
+    rgba(248, 250, 252, 1) 100%);     /* Clean end */
+
+  --alternate-gradient-hero-warm: linear-gradient(135deg,
+    rgba(199, 210, 254, 0.3) 0%,      /* Light indigo */   
+    rgba(219, 234, 254, 0.25) 25%,    /* Light blue */
+    rgba(239, 246, 255, 0.2) 40%,     /* Very light blue */
+    rgba(241, 245, 249, 0.15) 75%,    /* Light slate */
+    rgba(248, 250, 252, 1) 100%       /* Clean white-blue */
+  );
+  
+  /* Section Dividers */
+  --gradient-divider: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(203, 213, 225, 0.3) 50%, 
+    transparent 100%);
 }
 
 /* Reset */
