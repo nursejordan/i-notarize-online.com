@@ -59,10 +59,9 @@ const Hero = () => {
 
         {/* Enhanced Subtitle */}
         <p className="hero-subtitle body-large" style={{ color: 'var(--text-secondary)' }}>
-          Get your documents notarized from anywhere in the world in just 15 minutes. 
+          Professional notarization in just 15 minutes, available 24/7 worldwide.
           <br />
-          <strong>Professional, convenient, and available 24/7</strong> — serving the greater New York area 
-          and clients worldwide with trusted, state-licensed notarization services.
+          <strong>Trusted, state-licensed service</strong> for NYC area and global clients.
         </p>
 
         {/* Key Benefits */}
