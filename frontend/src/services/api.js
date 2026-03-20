@@ -171,6 +171,25 @@ export const apiService = {
         error: 'Failed to load testimonials'
       };
     }
+  },
+
+  // Subscribe email
+  async subscribeEmail(email, source = 'website') {
+    try {
+      const response = await apiClient.post('/email/subscribe', null, {
+        params: { email, source }
+      });
+      return {
+        success: true,
+        data: response.data
+      };
+    } catch (error) {
+      console.error('Failed to subscribe email:', error);
+      return {
+        success: false,
+        error: 'Failed to subscribe email'
+      };
+    }
   }
 };
 
