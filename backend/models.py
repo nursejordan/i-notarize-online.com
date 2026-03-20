@@ -98,7 +98,13 @@ class BusinessStats(BaseModel):
     average_session_time: str
     service_availability: str
 
-# API Response models
+# Email subscription model
+class EmailSubscription(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    email: EmailStr
+    subscribed_at: datetime = Field(default_factory=datetime.utcnow)
+    source: str = Field(default="faq_page")
+    active: bool = Field(default=True)
 class ContactSubmissionResponse(BaseModel):
     success: bool
     message: str
