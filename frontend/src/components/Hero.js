@@ -6,6 +6,13 @@ const Hero = () => {
   return (
     <section className="hero-section" id="hero">
       <div className="hero-content">
+        {/* Main Headline - Moved to Top */}
+        <h1 className="hero-title heading-hero mb-8">
+          Fast, Secure & Legally Binding
+          <br />
+          <span style={{ color: 'var(--text-secondary)' }}>Remote Notary Services</span>
+        </h1>
+
         {/* Announcement Badge */}
         <div className="hero-announcement" style={{ 
           background: 'rgba(59, 130, 246, 0.12)', 
@@ -45,14 +52,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="hero-title heading-hero">
-          Fast, Secure & Legally Binding
-          <br />
-          <span style={{ color: 'var(--text-secondary)' }}>Remote Notary Services</span>
-          <br />
-          <span style={{ color: '#3B82F6', fontSize: '0.6em', fontWeight: '600' }}>Starting at Just $25</span>
-        </h1>
+        {/* Pricing */}
+        <div className="mt-6 mb-4">
+          <span className="heading-2" style={{ color: '#3B82F6', fontWeight: '600' }}>Starting at Just $25</span>
+        </div>
 
         {/* Enhanced Subtitle */}
         <p className="hero-subtitle body-large" style={{ color: 'var(--text-secondary)' }}>
