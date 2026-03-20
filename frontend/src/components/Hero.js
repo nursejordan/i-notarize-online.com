@@ -8,8 +8,15 @@ const Hero = () => {
       <div className="hero-content">
         {/* Announcement Badge */}
         <div className="hero-announcement">
-          <Shield size={14} />
-          <span>NY State Licensed Notary</span>
+          <div className="text-center">
+            <div className="heading-3 mb-1" style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
+              Yordanos Mathewos
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <Shield size={14} />
+              <span className="font-semibold">NY STATE LICENSED NOTARY</span>
+            </div>
+          </div>
         </div>
 
         {/* Main Headline */}
