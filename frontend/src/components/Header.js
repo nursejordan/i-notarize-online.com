@@ -75,7 +75,7 @@ const Header = () => {
                 <div className="pt-4 border-t" style={{ borderColor: 'var(--border-light)' }}>
                   <div className="flex items-center space-x-2 mb-4">
                     <Phone size={16} />
-                    <span className="mono-text">(555) 123-4567</span>
+                    <span className="mono-text">(929) 866-0037</span>
                   </div>
                   <Button className="btn-primary w-full">
                     Book Appointment
