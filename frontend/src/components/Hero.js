@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Shield, Clock, Globe, CheckCircle } from 'lucide-react';
+import { Shield, Clock, Globe, CheckCircle, Phone } from 'lucide-react';
 
 const Hero = () => {
   return (
