@@ -60,6 +60,16 @@ async def get_contact_submissions():
         raise HTTPException(status_code=500, detail="Failed to retrieve submissions")
 
 # Business data endpoints
+@api_router.put("/business/info")
+async def update_business_info(info_data: dict):
+    """Admin endpoint to update business information"""
+    try:
+        await update_business_config("business_info", info_data)
+        return {"success": True, "message": "Business info updated successfully"}
+    except Exception as e:
+        logging.error(f"Error updating business info: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to update business info")
+
 @api_router.get("/business/info")
 async def get_business_info():
     try:
