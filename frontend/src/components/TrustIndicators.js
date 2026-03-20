@@ -84,21 +84,6 @@ const TrustIndicators = () => {
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-2">
-                <stat.icon size={24} style={{ color: 'var(--text-primary)' }} />
-              </div>
-              <div className="heading-hero mb-1">{stat.number}</div>
-              <div className="body-small" style={{ color: 'var(--text-secondary)' }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Testimonials */}
         <div className="text-center mb-12">
           <h2 className="heading-1 mb-8">What Clients Say</h2>
