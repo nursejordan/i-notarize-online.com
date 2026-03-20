@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
-import { Shield, Award, Users, Star, FileCheck, Clock } from 'lucide-react';
+import { Shield, Award, Star, FileCheck } from 'lucide-react';
 
 const TrustIndicators = () => {
   const credentials = [
