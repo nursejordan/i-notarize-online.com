@@ -78,11 +78,15 @@ const FAQ = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call for email subscription
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setIsSubscribed(true);
-      setEmail('');
+      const result = await apiService.subscribeEmail(email, 'faq_page');
+      
+      if (result.success) {
+        setIsSubscribed(true);
+        setEmail('');
+      } else {
+        console.error('Email subscription failed:', result.error);
+      }
     } catch (error) {
       console.error('Email subscription failed:', error);
     } finally {
