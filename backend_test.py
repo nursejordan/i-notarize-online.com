@@ -403,6 +403,123 @@ class BackendTester:
         except Exception as e:
             self.log_test("Contact Submissions Retrieval", False, f"Request error: {str(e)}")
     
+    async def test_email_subscription_valid(self):
+        """Test email subscription with valid email"""
+        valid_email = "sarah.johnson@example.com"
+        
+        try:
+            async with self.session.post(
+                f"{BACKEND_URL}/email/subscribe",
+                params={"email": valid_email, "source": "faq_page"},
+                headers={"Content-Type": "application/json"}
+            ) as response:
+                data = await response.json()
+                
+                if response.status == 200:
+                    required_fields = ["success", "message", "already_subscribed"]
+                    if all(field in data for field in required_fields):
+                        if data["success"]:
+                            self.log_test("Email Subscription - Valid Email", True, 
+                                        f"Successfully subscribed {valid_email}, already_subscribed: {data['already_subscribed']}", data)
+                        else:
+                            self.log_test("Email Subscription - Valid Email", False, 
+                                        "Success=False in response", data)
+                    else:
+                        missing = [f for f in required_fields if f not in data]
+                        self.log_test("Email Subscription - Valid Email", False, 
+                                    f"Missing required fields: {missing}", data)
+                else:
+                    self.log_test("Email Subscription - Valid Email", False, 
+                                f"HTTP {response.status}: {await response.text()}")
+        except Exception as e:
+            self.log_test("Email Subscription - Valid Email", False, f"Request error: {str(e)}")
+    
+    async def test_email_subscription_duplicate(self):
+        """Test email subscription with duplicate email"""
+        duplicate_email = "sarah.johnson@example.com"  # Same as previous test
+        
+        try:
+            async with self.session.post(
+                f"{BACKEND_URL}/email/subscribe",
+                params={"email": duplicate_email, "source": "newsletter"},
+                headers={"Content-Type": "application/json"}
+            ) as response:
+                data = await response.json()
+                
+                if response.status == 200:
+                    if data.get("success") and data.get("already_subscribed") == True:
+                        self.log_test("Email Subscription - Duplicate Email", True, 
+                                    f"Correctly handled duplicate email: {duplicate_email}", data)
+                    else:
+                        self.log_test("Email Subscription - Duplicate Email", False, 
+                                    "Did not properly handle duplicate email", data)
+                else:
+                    self.log_test("Email Subscription - Duplicate Email", False, 
+                                f"HTTP {response.status}: {await response.text()}")
+        except Exception as e:
+            self.log_test("Email Subscription - Duplicate Email", False, f"Request error: {str(e)}")
+    
+    async def test_email_subscription_invalid_format(self):
+        """Test email subscription with invalid email format"""
+        invalid_email = "not-a-valid-email"
+        
+        try:
+            async with self.session.post(
+                f"{BACKEND_URL}/email/subscribe",
+                params={"email": invalid_email, "source": "website"},
+                headers={"Content-Type": "application/json"}
+            ) as response:
+                if response.status == 422:  # Validation error expected
+                    data = await response.json()
+                    self.log_test("Email Subscription - Invalid Email Format", True, 
+                                "Correctly rejected invalid email format", data)
+                else:
+                    self.log_test("Email Subscription - Invalid Email Format", False, 
+                                f"Expected 422, got {response.status}: {await response.text()}")
+        except Exception as e:
+            self.log_test("Email Subscription - Invalid Email Format", False, f"Request error: {str(e)}")
+    
+    async def test_email_subscription_missing_email(self):
+        """Test email subscription with missing email parameter"""
+        try:
+            async with self.session.post(
+                f"{BACKEND_URL}/email/subscribe",
+                params={"source": "website"},  # Missing email parameter
+                headers={"Content-Type": "application/json"}
+            ) as response:
+                if response.status == 422:  # Validation error expected
+                    data = await response.json()
+                    self.log_test("Email Subscription - Missing Email", True, 
+                                "Correctly rejected missing email parameter", data)
+                else:
+                    self.log_test("Email Subscription - Missing Email", False, 
+                                f"Expected 422, got {response.status}: {await response.text()}")
+        except Exception as e:
+            self.log_test("Email Subscription - Missing Email", False, f"Request error: {str(e)}")
+    
+    async def test_email_subscription_different_sources(self):
+        """Test email subscription with different source values"""
+        test_email = "marketing.test@example.com"
+        sources = ["faq_page", "newsletter", "website", "contact_form"]
+        
+        for source in sources:
+            try:
+                async with self.session.post(
+                    f"{BACKEND_URL}/email/subscribe",
+                    params={"email": f"{source}.{test_email}", "source": source},
+                    headers={"Content-Type": "application/json"}
+                ) as response:
+                    data = await response.json()
+                    
+                    if response.status == 200 and data.get("success"):
+                        self.log_test(f"Email Subscription - Source: {source}", True, 
+                                    f"Successfully subscribed with source: {source}", data)
+                    else:
+                        self.log_test(f"Email Subscription - Source: {source}", False, 
+                                    f"Failed to subscribe with source {source}: {response.status}", data)
+            except Exception as e:
+                self.log_test(f"Email Subscription - Source: {source}", False, f"Request error: {str(e)}")
+    
     async def test_nonexistent_endpoint(self):
         """Test error handling for nonexistent endpoint"""
         try:
