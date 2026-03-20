@@ -7,14 +7,18 @@ const Hero = () => {
     <section className="hero-section" id="hero">
       <div className="hero-content">
         {/* Announcement Badge */}
-        <div className="hero-announcement">
+        <div className="hero-announcement" style={{ background: 'rgba(59, 130, 246, 0.15)', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
           <div className="text-center">
-            <div className="heading-3 mb-1" style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
-              Yordanos Mathewos
+            <div className="heading-3 mb-1" style={{ color: '#3B82F6', fontWeight: '700' }}>
+              YORDANOS MATHEWOS
+            </div>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Shield size={14} style={{ color: '#3B82F6' }} />
+              <span className="font-semibold" style={{ color: '#3B82F6' }}>NY STATE LICENSED NOTARY</span>
             </div>
             <div className="flex items-center justify-center gap-2">
-              <Shield size={14} />
-              <span className="font-semibold">NY STATE LICENSED NOTARY</span>
+              <Phone size={14} style={{ color: '#3B82F6' }} />
+              <span className="font-medium" style={{ color: '#3B82F6' }}>(929) 866-0037</span>
             </div>
           </div>
         </div>
@@ -23,9 +27,7 @@ const Hero = () => {
         <h1 className="hero-title heading-hero">
           Fast, Secure Remote Notary Services
           <br />
-          <span style={{ color: 'var(--text-secondary)' }}>by Yordanos Mathewos</span>
-          <br />
-          <span style={{ color: 'var(--text-secondary)', fontSize: '0.7em' }}>Starting at $25</span>
+          <span style={{ color: 'var(--text-secondary)' }}>Starting at $25</span>
         </h1>
 
         {/* Subtitle */}
